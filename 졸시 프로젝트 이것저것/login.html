@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html> -->
+<!-- {% load static %} -->
+<!-- <html lang="en"> -->
+
+<head>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Pen+Script|Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <img src="image.png" style="-webkit-transfrom:rotate(90dec); background:cover; width:100%; height:100%"> -->
+    <div class="container">
+        <div class="line">
+            <section class="main">
+                <div class="left">
+                    <div class="slide">
+                            <li><h1><br><br><br><br>KNU<br>graduation<br>program</h1></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!-- <p><br>현재 학점과 이수현황 및 졸업 기준을 <br>확인할 수 있는 페이지입니다.</p> -->
+                </div>
+                <div class="right">
+                    <br><br>
+                    <i class="fas fa-user on fa-circle fa-5x"></i>
+                    <h1>SIGNUP<br></h1>
+                    <p><br>Welcome To Knu Graduation Program</p>
+                    <hr>
+
+                    <!-- {% if error %}
+            {{ error }}
+            <br>
+            <br>
+            {% endif %} -->
+                    <form method="POST" action="{% url 'signup' %}">
+                        <!--{% csrf_token %}-->
+                        <br>
+                        <input name="username" placeholder="Username" type="text">
+                        <br>
+                        <input name="password1" placeholder="Password" type="password">
+                        <br>
+                        <input name="password2" placeholder="Confirm Password" type="password">
+                        <br><br>
+                        <span class="button">
+                            <button class="signup_signup_btn"><a href="{% url 'signup' %}">Sign Up</a></button>
+                    </form>
+                    </span>
+                </div>
+        </div>
+        </section>
+
+    </div>
+</body>
+
+<!-- </html> -->

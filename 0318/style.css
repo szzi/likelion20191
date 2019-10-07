@@ -1,0 +1,57 @@
+body{
+    background-color:#FAFAFA;
+    display: flex; /*flex는 외우자~~~~~~*/
+    justify-content: center; /*가로 정렬*/
+    align-items: center; /*세로 정렬*/
+    font-family: 'Noto Sans KR', sans-serif; 
+}
+
+/*세로는 쓰는 것 만큼 화면이 계속 열리기 때문에 align-items: centere이캐도 
+맨 위에 붙어있음.*/
+
+.card{
+    background-color: white;
+    border: 1px solid #efefef;
+    width: 600px;
+}
+
+.card .title{ 
+    /*card와 title 둘 다 바꾸겠다는 게 아니라, card 안에 있는 title을 변화시키겠다*/
+    padding-left: 20px; /*padding은 옆의 태그에 영향 ㄴㄴ 내꺼에서 */
+    padding-right: 20px;
+    display: flex; /*레이아웃 가로로 정렬*/
+    align-items: center; /*가로정렬을 가운데로 맞춘다*/
+}
+
+.card .title img{ /*.이 있으면 클래스 명, 없으면 태그 명*/
+    margin-right: 20px; /*margin은 다른 애를 밀어준다*/
+    border-radius: 50%; /*그림을 동그랗게*/
+    height: 30px;
+    width: 30px;
+    border: 1px solid #efefef;
+}
+
+.card .photo img{
+    width: 100%; /*사진이 크기가 안맞을 텐데, width를 100퍼로 하면 
+    card(부모)에 사이즈가 맞춰짐*/
+}
+
+.card .icon{
+    padding-left: 20px; /*padding은 옆의 태그에 영향 ㄴㄴ 내꺼에서 */
+    padding-right: 20px;
+    display: flex; /*flex con 가로 정렬*/
+    justify-content: space-between; 
+}
+
+.card .icon .front{
+    margin-right: 10px; /*양 옆, 오른쪽 간격을 10px 정도를 벌린다.*/
+}
+
+.card .icon i{
+    font-size: 1.4em; /*em : 우리가 보는 브라우저 크기에 맞게 변환*/
+}
+
+.card .des{
+    padding-left: 20px; /*padding은 옆의 태그에 영향 ㄴㄴ 내꺼에서 */
+    padding-right: 20px;
+}

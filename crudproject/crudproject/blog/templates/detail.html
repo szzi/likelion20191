@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>{{blog.title}}</h1>
+    <p>{{blog.pub_date}}</p>
+    <p>{{blog.body}}</p>
+    <br><br>
+
+    <a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">HOME</button></a>
+    <a href="{% url 'edit' blog.id %}"><button type="button" class="btn btn-secondary">EDIT</button></a>
+    <a href="{% url 'delete' blog.id %}"><button type="button" class="btn btn-secondary">DELETE</button></a>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+@font-face { font-family: 'S-CoreDream-4Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff'); font-weight: normal; font-style: normal; }
+.body{
+    background-color:rgb(230,230,230);
+    width:100%;
+    height:100%;
+    font-family:'S-CoreDream-4Regular';
+}
+
+.colorcontain{
+    background-color:rgb(211,207,195);
+}
+
+.nav{
+    display : flex;
+    background-color:#da2127;
+    width: 100%;
+    height: 80px;
+}
+
+.nav .logo img{
+    margin: 15px 0px 15px 150px;
+    width : 200px;
+    height :50px;
+}
+
+.title {
+    margin-top : 30px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.title p{
+    font-size: 15px;
+    color: #666666;
+}

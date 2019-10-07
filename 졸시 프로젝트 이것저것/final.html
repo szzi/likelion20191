@@ -1,0 +1,349 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/plugin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/final.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- raidal chart bar  -->
+    <!-- <script src="scripts/plugin.js"></script> -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'S-CoreDream-4Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .body {
+            background: url(nextbackimg.png);
+            background-repeat: repeat-y;
+            font-family: 'S-CoreDream-4Regular';
+            margin-bottom: 60px;
+        }
+
+        .container {
+            font-family: 'S-CoreDream-4Regular';
+            font-size: 18px;
+        }
+
+        hr {
+            border: thin solid rgb(10, 80, 106);
+            /* box-shadow: 0.3px 0.3px 0.3px 0.3px gray; */
+            box-shadow: 1px 1px 1px 1px gray;
+        }
+
+        h1 {
+            font-family: 'S-CoreDream-4Regular';
+            font-size: 20px;
+        }
+
+        .titlemsg {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .title {
+            margin-top: 80px;
+            margin-left: 200px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            margin-top: px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .box2,
+        .box3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            /* background-color: #FBEFFB; */
+        }
+
+        /* 
+        .title {
+            display: inline-block;
+            height: 30px;
+        } */
+
+        .box2 .bb2 {
+            /* display:inline-block; */
+            flex: 1;
+            text-align: cneter;
+            margin: 50px 20px;
+            height: 400px;
+            background-color: #F8E0EC;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .box3 .bb3 {
+            /* display:inline-block; */
+            flex: 1;
+            text-align: cneter;
+            margin: 50px 20px;
+            height: 200px;
+            background-color: #F8E0EC;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* chartcss */
+        .circular-progress-bar {
+            position: relative;
+            margin: 0 auto;
+            transform: rotate(-90deg);
+        }
+
+        .progress-percentage,
+        .progress-text {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            text-align: center;
+            padding: 0px 60px;
+        }
+
+        .progress-percentage {
+            font-size: 60px;
+            left: 60%;
+        }
+
+        .progress-text {
+            left: 35%;
+            color: #585858;
+            font-size: 21px;
+        }
+
+        .container {
+            margin-left: 200px;
+            margin-right: 0px;
+        }
+
+        /* #slide-down {
+            border: thin solid rgb(10, 80, 106);
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="body">
+        <div class="title">
+            <span class="titlemsg">
+                {{user.username}} 님의 졸업까지 남은 시간......
+            </span>
+            <hr>
+            <br>
+        </div>
+        <div class="container">
+            <div>
+                <span style="font-size:25px;font-weight: bold; color: #666666;">
+                    {% if 38 >= total_score %}
+
+                    현재 학년 : 1학년&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이수 학점 : {{total_score}}
+                    {% elif 75 >= total_score %}
+
+                    현재 학년 : 2학년 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이수 학점 : {{total_score}}
+
+
+                    {% elif 113 >= total_score %}
+
+                    현재 학년 : 3학년&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이수 학점 : {{total_score}}
+
+                    {% else %}
+
+                    현재 학년 : 4학년&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이수 학점 : {{total_score}}
+
+                    {% endif %}
+                    &nbsp;/&nbsp;150
+                </span>
+                <span style="font-size:25px;font-weight: bold; color: #666666;" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp평점 : {{year_grade}}&nbsp;/&nbsp;4.3</span>
+            </div>
+            <!-- <div class="box1container">
+                <span class="subtitle">평점 : {{year_grade}}&nbsp;/&nbsp;4.3</span>
+                <h3>
+                    {{year_grade}}&nbsp;/&nbsp;4.3
+                </h3>
+            </div> -->
+            <br>
+            <!-- <hr> -->
+            <div>
+                <a href="#box2container">
+                    <hr id="slide-down">
+                </a>
+            </div>
+
+            <!-- <button id="slide-down">눌러봐</button> -->
+            <div id="box2container">
+                <span class="subtitle">졸업 가능 여부</span><br>
+                <div class="box2">
+                    <div class="bb2">
+                        <span>공학전공</span><br>
+                        <!-- 이수조건 충족하는지 확인하고 success/unsucess표시 -->
+                        <!-- <img src="{% static './img/unsuccess-50x50.png' %}" alt="unsucess image will be located..."><br> -->
+                        <!-- <img src="../images/sucess-50x50.png" alt="sucess image will be located..."><br> -->
+                        {% if major_score >= 75 %}
+                        <h2>
+                            Success!!
+                        </h2>
+                        {% else %}
+                        <h2>
+                            Fail!
+                        </h2>
+                        {% endif %}
+                        <!-- chart 부분 -->
+                        <!-- <div class="row">
+                                <div class="col-sm-4 col-sm-offset-4">
+                                    <div class="my-progress-bar"></div>
+                                </div>
+                            </div> -->
+                        <div id="progress-circle0"></div>
+                        <!-- chart 부분 끝 -->
+
+                    </div>
+                    <div class="bb2">
+                        <span>전공기반</span><br>
+                        <!-- 이수조건 충족하는지 확인하고 success/unsucess표시 -->
+                        {% if base_score >= 24 %}
+                        <h2>
+                            Success!!
+                        </h2>
+                        {% else %}
+                        <h2>
+                            Fail!
+                        </h2>
+                        {% endif %}
+                        <!-- <img src="../images/sucess-50x50.png" alt="sucess image will be located..."><br> -->
+                    <div id="progress-circle1"></div>
+                    </div>
+                    <div class="bb2">
+                        <span>기본소양</span><br>
+
+                        {% if basic_score >= 15 %}
+                        <h2>
+                            Success!!
+                        </h2>
+                        {% else %}
+                        <h2>
+                            Fail!
+                        </h2>
+                        {% endif %}
+                        <!-- 이수조건 충족하는지 확인하고 success/unsucess표시 -->
+                        <!-- <img src="../images/unsucess-50x50.png" alt="unsucess image will be located..."><br> -->
+                        <!-- <img src="../images/sucess-50x50.png" alt="sucess image will be located..."><br> -->
+                        <div id="progress-circle2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <!-- <hr> -->
+            <div>
+                <a href="#box3container">
+                    <hr id="slide-down">
+                </a>
+            </div>
+
+            <div id="box3container">
+                <span class="subtitle">현재 이수 상태</span><br>
+                <div class="box3">
+                    <div class="bb3">
+                        공학전공<br>
+                        <h3>
+                            {{major_score}}&nbsp;/&nbsp;75학점
+                        </h3>
+                    </div>
+                    <div class="bb3">
+                        전공기반<br>
+                        <h3>
+                            {{base_score}}&nbsp;/&nbsp;24학점
+                        </h3>
+                    </div>
+                    <div class="bb3">
+                        기본소양<br>
+                        <h3>
+                            {{basic_score}}&nbsp;/&nbsp;15학점
+                        </h3>
+                    </div>
+                    <div class="bb3">
+                        교육<br>
+                        <h3>
+                            {{teach_score}}&nbsp;/&nbsp;학점
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="{% static 'js/plugin.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/grasp_mobile_progress_circle-1.0.0.min.js' %}"></script>
+
+        <script>
+            var arr=[{{major_score}}/75,{{base_score}}/24,{{basic_score}}/15];
+            var i=0;
+
+            
+            var j=0;
+            var progress_circles=[]
+            for(j=0;j<arr.length;j++){
+                var options = {
+                    width: "300px",
+                    line_width: 12,
+                    color: "rgb(10,80,106)",
+                    starting_position: 0,
+                    // percentage 값 가져오는 거 방법찾기!
+                    percent: arr[j]*100,
+                    text: Math.floor(arr[j]*100)+"%"
+                    // if (text > 100){
+                    //     text: Math.floor(100)+"%"
+                    // }
+                    // else{
+                        
+                    // }
+                }
+                console.log(options.text);
+                progress_circles.push($("#progress-circle"+j).gmpc(options));
+        }
+            
+            // progress_circle.gmpc('animate',(arr[0]/75)*100 , 3000);
+            // progress_circle.gmpc('percent',(arr[0]/75)*100);
+
+            // i++;
+            // var progress_circle1 = $("#progress-circle1").gmpc(options);
+            // progress_circle1.gmpc('animate', (arr[1]/24)*100 , 3000);
+            // progress_circle1.gmpc('percent', (arr[1]/24)*100);
+
+            // i++;
+            // var progress_circle2 = $("#progress-circle2").gmpc(options);
+            // progress_circle2.gmpc('animate', (arr[2]/15)*100 , 3000);
+            // progress_circle2.gmpc('percent', (arr[2]/15)*100);
+            // });
+        </script>
+    </div>
+</body>

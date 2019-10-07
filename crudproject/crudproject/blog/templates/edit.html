@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'update' blog.id %}">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">Title</label>
+        <input name="title" value="{{blog.title}}" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+    </div><br>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Body</label>
+        <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="10">{{blog.body}}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,82 @@
+@font-face { font-family: 'S-CoreDream-4Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+.body{
+    background-color:rgb(230,230,230);
+    height:100%;
+    width:100%;
+}
+.container{
+    font-family:'S-CoreDream-4Regular';
+    font-size: 18px;
+}
+
+h1{
+    font-family:'S-CoreDream-4Regular';
+    font-size: 20px;
+}
+
+.box2, .box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #FBEFFB;
+}
+
+.bb1 {
+    display: inline-block;
+    height: 30px;
+    background-color: #F8E0EC;
+}
+
+.bb1 > .userpicture{
+    
+}
+
+.box2 .bb2 {
+    /* display:inline-block; */
+    flex: 1;
+    text-align: cneter;
+    margin: 50px 40px;
+    height: 200px;
+    background-color: #F8E0EC;
+}
+
+.box3 .bb3 {
+    /* display:inline-block; */
+    flex: 1;
+    text-align: cneter;
+    margin: 50px 40px;
+    height: 200px;
+    background-color: #F8E0EC;
+}
+
+/* chartcss */
+.circular-progress-bar {
+    position: relative;
+    margin: 0 auto;
+    transform: rotate(-90deg);
+}
+
+.progress-percentage,
+.progress-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    text-align: center;
+    padding: 0px 60px;
+}
+
+.progress-percentage {
+    font-size: 60px;
+    left: 60%;
+}
+
+.progress-text {
+    left: 35%;
+    color: #585858;
+    font-size: 21px;
+}

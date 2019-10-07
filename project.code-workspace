@@ -1,0 +1,28 @@
+{
+    "folders": [
+		{
+			"name": "score",
+			"uri": "vsls:/"
+		}
+	],
+    "settings": {
+        "files.hotExit": "off",
+        "vsliveshare.join.reload.workspaceId": "23984FC52AAD19B2799DEFCD20EBAED9994A",
+        "vsliveshare.join.reload.workspaceFolder": "C:\\Users\\김서진\\AppData\\Local\\Temp\\vsliveshare\\tmp-23984FC52AAD19B2799DEFCD20EBAED9994A",
+        "vsliveshare.join.correlationId": "",
+        "extensions.ignoreRecommendations": true,
+        "editor.detectIndentation": true,
+        "editor.formatOnSave": false,
+        "files.autoSave": "off",
+        "files.trimTrailingWhitespace": false,
+        "files.insertFinalNewline": false,
+        "files.trimFinalNewlines": false,
+        "typescript.tsc.autoDetect": "off",
+        "jake.autoDetect": "off",
+        "grunt.autoDetect": "off",
+        "gulp.autoDetect": "off",
+        "npm.autoDetect": "off",
+        "debug.allowBreakpointsEverywhere": true,
+        "html.autoClosingTags": false
+    }
+}
